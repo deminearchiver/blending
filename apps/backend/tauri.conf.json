@@ -1,0 +1,51 @@
+{
+  "productName": "blender-launcher",
+  "version": "0.0.0",
+  "identifier": "dev.deminearchiver.blenderlauncher",
+  "build": {
+    "beforeDevCommand": "yarn workspace @blender-launcher/frontend dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "yarn workspace @blender-launcher/frontend build",
+    "frontendDist": "../frontend/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Blender Launcher",
+        "minWidth": 640,
+        "minHeight": 480
+      }
+    ],
+    "trayIcon": {
+      "iconPath": "app-icon.png",
+      "tooltip": "Blender Launcher"
+    },
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "copyright": "Copyright (c) deminearchiver 2024",
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [
+      "resources/**/*"
+    ],
+    "fileAssociations": [
+      {
+        "ext": ["blend"],
+        "name": "Blender File",
+        "description": "Blender Project FIle",
+        "role": "Editor"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "blender-launcher",
+  "packageManager": "yarn@4.1.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --filter=@blender-launcher/backend",
+    "build": "turbo run build --filter=@blender-launcher/backend"
+  },
+  "devDependencies": {
+    "turbo": "^1.13.0",
+    "typescript": "^5.4.3"
+  }
+}

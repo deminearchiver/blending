@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = [
+  "apps/backend",
+  "packages/tauri-plugin-ftp",
+]
+
+[workspace.package]
+authors = ["deminearchiver"]
+edition = "2021"
+license = "ISC"
+
+[workspace.dependencies]
+tauri-plugin-ftp = { path = "packages/tauri-plugin-ftp" }

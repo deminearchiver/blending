@@ -1,0 +1,7 @@
+.menu-separator {
+  border: none;
+  border-top: 1px solid #3e3e3e;
+
+  width: calc(100% - 32px);
+  height: 0px;
+}

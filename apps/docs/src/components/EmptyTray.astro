@@ -1,0 +1,25 @@
+---
+import { Menu, MenuItem, MenuSeparator } from "./menu";
+import MaterialSymbol from "./MaterialSymbol.astro";
+---
+
+<div class="not-content">
+  <Menu>
+    <slot />
+    <MenuSeparator />
+    <MenuItem label="Hide window">
+      <MaterialSymbol
+        slot="leading"
+        name="visibility_off"
+        size="20px"
+        opticalSize={20} />
+    </MenuItem>
+    <MenuItem label="Exit">
+      <MaterialSymbol
+        slot="leading"
+        name="close"
+        size="20px"
+        opticalSize={20} />
+    </MenuItem>
+  </Menu>
+</div>

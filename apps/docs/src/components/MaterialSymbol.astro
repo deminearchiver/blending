@@ -1,0 +1,45 @@
+---
+import "material-symbols/rounded.css";
+import type { MaterialSymbol as MaterialSymbolName } from "material-symbols";
+
+interface Props {
+  name: MaterialSymbolName;
+  size?: string,
+  fill?: number;
+  weight?: number;
+  grade?: number;
+  opticalSize?: number;
+}
+const {
+  name,
+  size,
+  fill,
+  weight,
+  grade,
+  opticalSize
+} = Astro.props;
+---
+
+<span class="material-symbols-rounded">
+  {name}
+</span>
+
+<style
+  is:global
+  define:vars={{
+    size,
+    fill,
+    weight,
+    grade,
+    opticalSize
+  }}>
+  .material-symbols-rounded {
+    font-size: var(--size, 24px);
+    font-variation-settings: 
+      "FILL" var(--fill, 0),
+      "wght" var(--weight, 400),
+      "GRAD" var(--grade, 0),
+      "opsz" var(--opticalSize, 24);
+  }
+</style>
+

@@ -1,0 +1,28 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: yarn
+      - name: Install dependencies
+        run: yarn workspaces focus @blender-launcher/docs
+      - name: Build
+        run: yarn workspace @blender-launcher/docs build
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          wranglerVersion: 3
+          accountId: 38794234ecc4906051a567a03b96d5bd
+          apiToken: ${{ secrets.CLOUDFLARE_TOKEN }}
+          packageManager: yarn
+          command: pages deploy apps/docs/dist --project-name=blender-launcher

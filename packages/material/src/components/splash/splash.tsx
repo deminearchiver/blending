@@ -26,7 +26,7 @@ export type SplashProps = {
   disabled?: boolean;
 }
 
-export const Splash: ParentComponent<SplashProps> = (props) => {
+export const Splash: Component<SplashProps> = (props) => {
   let ref!: HTMLElement;
   let surfaceRef!: HTMLElement;
 

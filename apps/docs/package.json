@@ -1,0 +1,38 @@
+{
+  "name": "@blender-launcher/docs",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "wrangler pages deploy dist --project-name=blender-launcher"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/cloudflare": "^10.0.1",
+    "@astrojs/solid-js": "^4.0.1",
+    "@astrojs/starlight": "^0.21.2",
+    "@blender-launcher/material": "workspace:^",
+    "@solid-primitives/bounds": "^0.0.121",
+    "@solid-primitives/event-listener": "^2.3.3",
+    "@solid-primitives/presence": "^0.0.6",
+    "@solid-primitives/scroll": "^2.0.23",
+    "@solid-primitives/utils": "^6.2.3",
+    "astro": "^4.3.5",
+    "hast": "^1.0.0",
+    "material-symbols": "^0.17.1",
+    "rehype": "^13.0.1",
+    "sharp": "^0.32.5",
+    "solid-js": "^1.8.16",
+    "starlight-blog": "^0.5.1",
+    "starlight-image-zoom": "^0.2.0",
+    "typescript": "^5.4.3",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.41.0"
+  }
+}

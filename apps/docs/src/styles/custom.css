@@ -1,0 +1,23 @@
+.card {
+  border-radius: 12px;
+}
+
+[data-has-hero] .action.minimal {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 -1.25rem;
+    height: 100%;
+    border-radius: 999rem;
+  }
+
+  &:hover::before {
+    background-color: color-mix(in srgb, var(--sl-color-white) 4%, transparent);
+  }
+  
+  &:active::before {
+    background-color: color-mix(in srgb, var(--sl-color-white) 2%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sl-color-white) 6%, transparent);
+  }
+}

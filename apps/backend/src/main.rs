@@ -1,5 +1,5 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!!
-// #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use windows_core::ComInterface;
 use std::{fs::{self, File}, io::{copy, Read, Write}, path::{Path, PathBuf}};
 

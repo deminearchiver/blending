@@ -1,0 +1,87 @@
+---
+title: Blender Launcher
+description: Fluently manage Blender versions
+template: splash
+editUrl: false
+hero:
+  tagline: Fluently manage Blender versions
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Watch Tutorial
+      link: https://youtube.com/@deminearchiver
+      icon: youtube
+      variant: primary
+    - text: Get Started
+      link: /guides/
+      icon: right-arrow
+    # - text: Read the Starlight docs
+    #   link: https://starlight.astro.build
+    #   icon: external
+    
+
+    # - text: Contribute
+    #   link: https://github.com/deminearchiver/blender-launcher
+    #   icon: open-book
+    
+---
+
+import { Card, CardGrid, FileTree, LinkCard } from "@astrojs/starlight/components";
+import { Tray, ImageCard } from "../../components";
+import { Image } from "astro:assets";
+
+## Features
+
+<CardGrid stagger>
+	{/* <Card title="Update content" icon="pencil">
+		Edit `src/content/docs/index.mdx` to see this page change.
+	</Card>
+	<Card title="Add new content" icon="add-document">
+		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	</Card>
+	<Card title="Configure your site" icon="setting">
+		Edit your `sidebar` and other config in `astro.config.mjs`.
+	</Card>
+	<Card title="Read the docs" icon="open-book">
+		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	</Card> */}
+	<Card title="" icon="star">
+    
+	</Card>
+	<ImageCard title="Customizable Tray" icon="pencil">
+    Quickly launch Blender from your system tray.
+    {/* <details>
+      <summary>See it in action</summary> */}
+      <Tray />
+    {/* </details> */}
+    [Learn more]()
+	</ImageCard>
+	<ImageCard title="Flexible Configuration" icon="setting">
+    <img
+      slot="banner"
+      src="https://raw.githubusercontent.com/withastro/docs/main/public/default-og-image.png" />
+    Many different settings to configure the app's behaviour
+    <LinkCard title="Configuration reference" href="/reference/configuration"></LinkCard>
+	</ImageCard>
+	<Card title="" icon="open-book">
+
+	</Card>
+  <ImageCard title="File Launcher" icon="document">
+    <img
+      slot="banner"
+      src="https://raw.githubusercontent.com/withastro/docs/main/public/default-og-image.png" />
+:::caution[Coming soon]
+This feature is not ready for use
+:::
+    Association for `.blend` files, which opens a Blender version picker!
+
+
+  </ImageCard> 
+	<Card title="Powered by Tauri & SolidJS" icon="rocket">
+		Performant, cross platform, tiny (\<20MB), secure.
+	</Card>
+</CardGrid>
+
+<div align="center">
+  Built with [**Starlight**](https://starlight.astro.build/).
+</div>

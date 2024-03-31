@@ -1,0 +1,100 @@
+---
+import { Menu, MenuItem, MenuSeparator } from "./menu";
+import MaterialSymbol from "./MaterialSymbol.astro";
+import EmptyTray from "./EmptyTray.astro";
+---
+
+<EmptyTray>
+  <MenuItem label="Blender">
+    <MaterialSymbol
+      slot="leading"
+      name="play_arrow"
+      size="20px"
+      fill={1}
+      opticalSize={20} />
+  </MenuItem>
+  <MenuItem
+    client:visible
+    label="Blender 4.1">
+    <MaterialSymbol
+      slot="leading"
+      name="folder_open"
+      size="20px"
+      opticalSize={20} />
+    <MaterialSymbol
+      slot="trailing"
+      name="navigate_next"
+      size="20px"
+      opticalSize={20} />
+    <MenuItem label="Blender">
+      <MaterialSymbol
+        slot="leading"
+        name="play_arrow"
+        size="20px"
+        fill={1}
+        opticalSize={20} />
+    </MenuItem>
+    <MenuItem label="Blender">
+      <MaterialSymbol
+        slot="leading"
+        name="play_arrow"
+        size="20px"
+        fill={1}
+        opticalSize={20} />
+    </MenuItem>
+    <MenuItem label="Blender">
+      <MaterialSymbol
+        slot="leading"
+        name="play_arrow"
+        size="20px"
+        fill={1}
+        opticalSize={20} />
+    </MenuItem>
+  </MenuItem>
+  <MenuItem
+    client:visible
+    label="Other">
+    <MaterialSymbol
+      slot="leading"
+      name="folder_open"
+      size="20px"
+      opticalSize={20} />
+    <MaterialSymbol
+      slot="trailing"
+      name="navigate_next"
+      size="20px"
+      opticalSize={20} />
+    <MenuItem label="Blender 3.6 LTS">
+      <MaterialSymbol
+        slot="leading"
+        name="play_arrow"
+        size="20px"
+        fill={1}
+        opticalSize={20} />
+    </MenuItem>
+    <MenuItem label="Blender 4.1">
+      <MaterialSymbol
+        slot="leading"
+        name="play_arrow"
+        size="20px"
+        fill={1}
+        opticalSize={20} />
+    </MenuItem>
+    <MenuItem label="Blender 4.2">
+      <MaterialSymbol
+        slot="leading"
+        name="play_arrow"
+        size="20px"
+        fill={1}
+        opticalSize={20} />
+    </MenuItem>
+    <MenuItem label="Blender">
+      <MaterialSymbol
+        slot="leading"
+        name="play_arrow"
+        size="20px"
+        fill={1}
+        opticalSize={20} />
+    </MenuItem>
+  </MenuItem>
+</EmptyTray>

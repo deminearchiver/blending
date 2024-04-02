@@ -1,0 +1,31 @@
+---
+import { Tray } from ".";
+
+
+---
+
+<div class="wrapper">
+  <div class="taskbar" />
+  <Tray />
+</div>
+
+<style>
+  .taskbar {
+    position: absolute;
+
+    width: 100%;
+    bottom: 0;
+    height: 48px;
+    background-color: red;
+    border-top: 1px solid white;
+
+    z-index: -1;
+  }
+  
+  .wrapper {
+    aspect-ratio: 2 / 1;
+    display: flex;
+    place-items: center;
+    place-content: center;
+  }
+</style>

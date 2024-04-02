@@ -55,8 +55,8 @@
   transform-origin: 0px 24px;
 
   transition:
-    transform 200ms ease-out,
-    opacity 50ms ease-out;
+    transform 500ms cubic-bezier(0.2, 0, 0, 1),
+    opacity 200ms ease-out;
 }
 
 .wrapper.visible {

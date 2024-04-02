@@ -37,7 +37,7 @@ export default defineConfig({
   plugins: [
     solid(),
     vanillaExtractPlugin({
-
+      identifiers: ({ hash }) => `blender-launcher_${hash}` 
     }),
     i18n(),
   ],

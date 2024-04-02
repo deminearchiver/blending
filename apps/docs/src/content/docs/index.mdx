@@ -28,6 +28,7 @@ hero:
 
 import { Card, CardGrid, FileTree, LinkCard } from "@astrojs/starlight/components";
 import { Tray, ImageCard } from "../../components";
+import TaskBar from "../../components/TaskBar.astro";
 import { Image } from "astro:assets";
 
 ## Features
@@ -49,6 +50,7 @@ import { Image } from "astro:assets";
     
 	</Card>
 	<ImageCard title="Customizable Tray" icon="pencil">
+    <TaskBar slot="banner" />
     Quickly launch Blender from your system tray.
     {/* <details>
       <summary>See it in action</summary> */}

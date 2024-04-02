@@ -1,5 +1,4 @@
 import { ComplexStyleRule, fallbackVar, style } from "@vanilla-extract/css";
-import { darkTheme } from "../../theme/global/dark.css";
 import { splash } from "./css";
 import css from "@blender-launcher/common/css";
 

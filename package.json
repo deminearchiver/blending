@@ -10,8 +10,8 @@
     "build": "turbo run build --filter=@blender-launcher/backend"
   },
   "devDependencies": {
-    "turbo": "^1.13.0",
+    "turbo": "^1.13.2",
     "typescript": "^5.4.3",
-    "wrangler": "^3.41.0"
+    "wrangler": "^3.43.0"
   }
 }

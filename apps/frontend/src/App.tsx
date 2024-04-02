@@ -19,6 +19,7 @@ import { LogicalPosition } from "@tauri-apps/api/dpi";
 import { createEventListener } from "@solid-primitives/event-listener";
 import { NavigationRail } from "@blender-launcher/material/components/navigation-rail";
 import { FloatingActionButton } from "@blender-launcher/material/components/floating-action-button";
+import { getCurrent } from "@tauri-apps/api/window";
 
 export const App: Component = (props) => {
   createEventListener(
@@ -39,10 +40,13 @@ export const App: Component = (props) => {
     },
   );
 
-  onMount(() => {
+  onMount(async () => {
     const color = getComputedStyle(document.body)
       .getPropertyValue(getVarName(darkTheme.color.surfaceContainer));
     invoke("set_title_bar_color", { color: color });
+    
+    getCurrent().show();
+
 
 
   });

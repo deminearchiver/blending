@@ -15,6 +15,7 @@
     "shell:allow-open",
     "menu:allow-new",
     "menu:allow-popup",
-    "menu:allow-items"
+    "menu:allow-items",
+    "window:allow-show"
   ]
 }

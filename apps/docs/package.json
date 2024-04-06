@@ -33,6 +33,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@blending/config": "workspace:^",
     "wrangler": "^3.44.0"
   }
 }

@@ -26,6 +26,7 @@
     "solid-transition-group": "^0.2.3"
   },
   "devDependencies": {
+    "@blending/config": "workspace:^",
     "@solid-primitives/event-listener": "^2.3.3",
     "@solid-primitives/refs": "^1.0.8",
     "@types/node": "^20.12.3",

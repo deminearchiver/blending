@@ -41,7 +41,7 @@ fn main() {
   // stream.login("anonymous", "").unwrap();
   // println!("Connected!");
 
-  
+
   // println!("Going to Blender 4.1 directory...");
   // stream.cwd("/blender/blender-release/Blender4.1").unwrap();
 
@@ -66,7 +66,7 @@ fn main() {
   //       total,
   //     };
   //     copy(&mut progress, &mut file).unwrap();
-          
+
   //     Ok(())
   //   }
   // ).unwrap();
@@ -89,6 +89,7 @@ fn main() {
     .plugin(tauri_plugin_autostart::init(MacosLauncher::LaunchAgent, None))
     .plugin(tauri_plugin_shell::init())
     .plugin(tauri_plugin_window_state::Builder::default().build())
+    .plugin(tauri_plugin_cli::init())
     .plugin(
       tauri_plugin_single_instance::init(|app, args, cwd| {
 
@@ -111,7 +112,7 @@ fn main() {
       }
 
 
-      let app = app.handle(); 
+      let app = app.handle();
       let tray = app.tray_by_id("main").unwrap();
 
       // let icon_play = Image::from_path(get_resource(app, "icon_play.png")?)?;
@@ -165,7 +166,7 @@ fn main() {
           }
         }
       });
-      
+
 
       let window = app.get_webview_window("main").unwrap();
       #[cfg(windows)]

@@ -21,6 +21,7 @@
   },
   "packageManager": "yarn@4.1.1",
   "devDependencies": {
+    "@blending/config": "workspace:^",
     "material-symbols": "^0.17.1",
     "solid-js": "^1.8.16",
     "typescript": "^5.4.3"

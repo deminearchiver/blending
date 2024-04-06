@@ -12,7 +12,10 @@
     "packages/*"
   ],
   "scripts": {
-    ":": "yarn workspace"
+    ":": "yarn workspace",
+    ":docs": "yarn workspace @blending/docs",
+    ":backend": "yarn workspace @blending/backend",
+    ":frontend": "yarn workspace @blending/frontend"
   },
   "devDependencies": {
     "typescript": "^5.4.3",

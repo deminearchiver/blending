@@ -1,25 +1,25 @@
 {
-  "productName": "blender-launcher",
+  "productName": "blending",
   "version": "0.0.0",
   "identifier": "dev.deminearchiver.blenderlauncher",
   "build": {
-    "beforeDevCommand": "yarn workspace @blender-launcher/frontend dev",
+    "beforeDevCommand": "yarn workspace @blending/frontend dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "yarn workspace @blender-launcher/frontend build",
+    "beforeBuildCommand": "yarn workspace @blending/frontend build",
     "frontendDist": "../frontend/dist"
   },
   "app": {
     "windows": [
       {
         "label": "main",
-        "title": "Blender Launcher",
+        "title": "Blending",
         "minWidth": 640,
         "minHeight": 480
       }
     ],
     "trayIcon": {
       "iconPath": "app-icon.png",
-      "tooltip": "Blender Launcher"
+      "tooltip": "Blending"
     },
     "security": {
       "csp": null

@@ -567,17 +567,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blender-launcher/backend@workspace:apps/backend":
+"@blending/backend@workspace:apps/backend":
   version: 0.0.0-use.local
-  resolution: "@blender-launcher/backend@workspace:apps/backend"
+  resolution: "@blending/backend@workspace:apps/backend"
   dependencies:
     "@tauri-apps/cli": "npm:>=2.0.0-beta.0"
   languageName: unknown
   linkType: soft
 
-"@blender-launcher/common@workspace:^, @blender-launcher/common@workspace:packages/common":
+"@blending/common@workspace:^, @blending/common@workspace:packages/common":
   version: 0.0.0-use.local
-  resolution: "@blender-launcher/common@workspace:packages/common"
+  resolution: "@blending/common@workspace:packages/common"
   dependencies:
     "@vanilla-extract/css": "npm:^1.14.2"
     svg-path-properties: "npm:^1.3.0"
@@ -585,21 +585,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blender-launcher/docs@workspace:apps/docs":
+"@blending/docs@workspace:apps/docs":
   version: 0.0.0-use.local
-  resolution: "@blender-launcher/docs@workspace:apps/docs"
+  resolution: "@blending/docs@workspace:apps/docs"
   dependencies:
     "@astrojs/check": "npm:^0.5.10"
     "@astrojs/cloudflare": "npm:^10.0.2"
     "@astrojs/solid-js": "npm:^4.0.1"
     "@astrojs/starlight": "npm:^0.21.3"
-    "@blender-launcher/material": "workspace:^"
+    "@blending/material": "workspace:^"
     "@solid-primitives/bounds": "npm:^0.0.121"
     "@solid-primitives/event-listener": "npm:^2.3.3"
     "@solid-primitives/presence": "npm:^0.0.6"
     "@solid-primitives/scroll": "npm:^2.0.23"
     "@solid-primitives/utils": "npm:^6.2.3"
-    astro: "npm:^4.5.13"
+    astro: "npm:^4.5.14"
     hast: "npm:^1.0.0"
     material-symbols: "npm:^0.17.1"
     rehype: "npm:^13.0.1"
@@ -609,43 +609,48 @@ __metadata:
     starlight-image-zoom: "npm:^0.2.0"
     typescript: "npm:^5.4.3"
     unist-util-visit: "npm:^5.0.0"
-    wrangler: "npm:^3.43.0"
+    wrangler: "npm:^3.44.0"
   languageName: unknown
   linkType: soft
 
-"@blender-launcher/frontend@workspace:apps/frontend":
+"@blending/frontend@workspace:apps/frontend":
   version: 0.0.0-use.local
-  resolution: "@blender-launcher/frontend@workspace:apps/frontend"
+  resolution: "@blending/frontend@workspace:apps/frontend"
   dependencies:
-    "@blender-launcher/common": "workspace:^"
-    "@blender-launcher/material": "workspace:^"
-    "@blender-launcher/tauri-plugin-ftp": "workspace:^"
+    "@blending/common": "workspace:^"
+    "@blending/material": "workspace:^"
+    "@blending/tauri-plugin-ftp": "workspace:^"
     "@material/material-color-utilities": "npm:^0.2.7"
+    "@solid-primitives/context": "npm:^0.2.3"
     "@solid-primitives/event-listener": "npm:^2.3.3"
     "@solid-primitives/refs": "npm:^1.0.8"
     "@solidjs/router": "npm:^0.13.1"
     "@tauri-apps/api": "npm:>=2.0.0-beta.0"
-    "@types/node": "npm:^20.12.2"
+    "@tauri-apps/plugin-dialog": "npm:>=2.0.0-beta"
+    "@types/node": "npm:^20.12.3"
     "@vanilla-extract/css": "npm:^1.14.2"
     "@vanilla-extract/private": "npm:^1.0.4"
     "@vanilla-extract/vite-plugin": "npm:^4.0.7"
     material-symbols: "npm:^0.17.1"
-    solid-js: "npm:^1.8.15"
+    solid-js: "npm:^1.8.16"
+    solid-motionone: "npm:^1.0.0"
+    solid-transition-group: "npm:^0.2.3"
     typescript: "npm:^5.4.3"
     vite: "npm:^5.2.7"
     vite-plugin-solid: "npm:^2.10.2"
   languageName: unknown
   linkType: soft
 
-"@blender-launcher/material@workspace:^, @blender-launcher/material@workspace:packages/material":
+"@blending/material@workspace:^, @blending/material@workspace:packages/material":
   version: 0.0.0-use.local
-  resolution: "@blender-launcher/material@workspace:packages/material"
+  resolution: "@blending/material@workspace:packages/material"
   dependencies:
-    "@blender-launcher/common": "workspace:^"
+    "@blending/common": "workspace:^"
     "@material/material-color-utilities": "npm:^0.2.7"
     "@solid-primitives/event-listener": "npm:^2.3.3"
     "@solid-primitives/jsx-tokenizer": "npm:^1.0.10"
     "@solid-primitives/refs": "npm:^1.0.8"
+    "@solid-primitives/scroll": "npm:^2.0.23"
     "@solid-primitives/utils": "npm:^6.2.3"
     "@vanilla-extract/css": "npm:^1.14.2"
     "@vanilla-extract/dynamic": "npm:^2.1.0"
@@ -661,19 +666,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blender-launcher/tauri-plugin-customize@workspace:packages/tauri-plugin-customize":
+"@blending/tauri-plugin-ftp@workspace:^, @blending/tauri-plugin-ftp@workspace:packages/tauri-plugin-ftp":
   version: 0.0.0-use.local
-  resolution: "@blender-launcher/tauri-plugin-customize@workspace:packages/tauri-plugin-customize"
-  dependencies:
-    "@tauri-apps/api": "npm:>=2.0.0-beta.0"
-    "@tauri-apps/cli": "npm:>=2.0.0-beta.0"
-    typescript: "npm:^5.4.3"
-  languageName: unknown
-  linkType: soft
-
-"@blender-launcher/tauri-plugin-ftp@workspace:^, @blender-launcher/tauri-plugin-ftp@workspace:packages/tauri-plugin-ftp":
-  version: 0.0.0-use.local
-  resolution: "@blender-launcher/tauri-plugin-ftp@workspace:packages/tauri-plugin-ftp"
+  resolution: "@blending/tauri-plugin-ftp@workspace:packages/tauri-plugin-ftp"
   dependencies:
     "@tauri-apps/api": "npm:>=2.0.0-beta.0"
     "@tauri-apps/cli": "npm:>=2.0.0-beta.0"
@@ -782,6 +777,15 @@ __metadata:
   checksum: 10c0/444d81612cd8c5c802a3d1253df83d5f77d3db87f351861655683a4743990e6b38976bf2e4129591c5a258607b63574b3c7bed702cf6a0eb7912222edf4570e9
   languageName: node
   linkType: hard
+
+"@deminearchiver/blending@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@deminearchiver/blending@workspace:."
+  dependencies:
+    typescript: "npm:^5.4.3"
+    wrangler: "npm:^3.44.0"
+  languageName: unknown
+  linkType: soft
 
 "@emmetio/abbreviation@npm:^2.3.3":
   version: 2.3.3
@@ -1651,6 +1655,71 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@motionone/animation@npm:^10.17.0":
+  version: 10.17.0
+  resolution: "@motionone/animation@npm:10.17.0"
+  dependencies:
+    "@motionone/easing": "npm:^10.17.0"
+    "@motionone/types": "npm:^10.17.0"
+    "@motionone/utils": "npm:^10.17.0"
+    tslib: "npm:^2.3.1"
+  checksum: 10c0/51873c9532ccb9f2b8475e871ba3eeebff2171bb2bd88e76bcf1fdb5bc1a7150f319c148063d17c16597038a8993c68033d918cc73a9fec40bb1f78ee8a52764
+  languageName: node
+  linkType: hard
+
+"@motionone/dom@npm:^10.16.4":
+  version: 10.17.0
+  resolution: "@motionone/dom@npm:10.17.0"
+  dependencies:
+    "@motionone/animation": "npm:^10.17.0"
+    "@motionone/generators": "npm:^10.17.0"
+    "@motionone/types": "npm:^10.17.0"
+    "@motionone/utils": "npm:^10.17.0"
+    hey-listen: "npm:^1.0.8"
+    tslib: "npm:^2.3.1"
+  checksum: 10c0/bca972f6d60aa1462993ea1b36f0ba702c8c4644b602e460834d3a4ce88f3c7c1dcfec8810c6598e9cf502ad6d3af718a889ab1661c97ec162979fe9a0ff36ab
+  languageName: node
+  linkType: hard
+
+"@motionone/easing@npm:^10.17.0":
+  version: 10.17.0
+  resolution: "@motionone/easing@npm:10.17.0"
+  dependencies:
+    "@motionone/utils": "npm:^10.17.0"
+    tslib: "npm:^2.3.1"
+  checksum: 10c0/9e82cf970cb754c44bc8226fd660c4a546aa06bb6eabb0b8be3a1466fc07920da13195e76d09d81704d059411584ba66de3bfc0192acc585a6fe352bf3e3fe22
+  languageName: node
+  linkType: hard
+
+"@motionone/generators@npm:^10.17.0":
+  version: 10.17.0
+  resolution: "@motionone/generators@npm:10.17.0"
+  dependencies:
+    "@motionone/types": "npm:^10.17.0"
+    "@motionone/utils": "npm:^10.17.0"
+    tslib: "npm:^2.3.1"
+  checksum: 10c0/b1a951d7c20474b34d31cb199907a3ee4ae5074ff2ab49e18e54a63f5eacba6662e179a76f9b64ed7eaac5922ae934eaeca567f2a48c5a1a3ebf59cc5a43fc9f
+  languageName: node
+  linkType: hard
+
+"@motionone/types@npm:^10.17.0":
+  version: 10.17.0
+  resolution: "@motionone/types@npm:10.17.0"
+  checksum: 10c0/9c91d887b368c93e860c1ff4b245d60d33966ec5bd2525ce91c4e2904c223f79333013fe06140feeab23f27ad9e8546a151e8357c5dc5218c5b658486bac3f82
+  languageName: node
+  linkType: hard
+
+"@motionone/utils@npm:^10.16.3, @motionone/utils@npm:^10.17.0":
+  version: 10.17.0
+  resolution: "@motionone/utils@npm:10.17.0"
+  dependencies:
+    "@motionone/types": "npm:^10.17.0"
+    hey-listen: "npm:^1.0.8"
+    tslib: "npm:^2.3.1"
+  checksum: 10c0/a90dc772245fa379d522d752dcbe80b02b1fcb17da6a3f3ebc725ac0e99b7847d39f1f4a29f10cbf5e8b6157766191ba03e96c75b0fa8378e3a1c4cc8cad728a
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -1875,6 +1944,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@solid-primitives/context@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "@solid-primitives/context@npm:0.2.3"
+  peerDependencies:
+    solid-js: ^1.6.12
+  checksum: 10c0/43d63bfab0318e17fad6c3716cec4c031d9bfe783dc53cc93273d25a410fe51a20846edff34be06cc0733d7acf768a833c9ec2b5732be6f941982940d0d88cd6
+  languageName: node
+  linkType: hard
+
 "@solid-primitives/event-listener@npm:^2.3.3":
   version: 2.3.3
   resolution: "@solid-primitives/event-listener@npm:2.3.3"
@@ -1908,7 +1986,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@solid-primitives/refs@npm:^1.0.8":
+"@solid-primitives/props@npm:^3.1.8":
+  version: 3.1.11
+  resolution: "@solid-primitives/props@npm:3.1.11"
+  dependencies:
+    "@solid-primitives/utils": "npm:^6.2.3"
+  peerDependencies:
+    solid-js: ^1.6.12
+  checksum: 10c0/81fd3e030b2ac8552600c27538b503485ba73efe7382cd39d5c615c8301015c869e5ce0ec9150ddaa27066c9459d1b3fb46a948ebd0b2354eec2734c6da3ff98
+  languageName: node
+  linkType: hard
+
+"@solid-primitives/refs@npm:^1.0.5, @solid-primitives/refs@npm:^1.0.8":
   version: 1.0.8
   resolution: "@solid-primitives/refs@npm:1.0.8"
   dependencies:
@@ -1968,6 +2057,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@solid-primitives/transition-group@npm:^1.0.2, @solid-primitives/transition-group@npm:^1.0.3":
+  version: 1.0.5
+  resolution: "@solid-primitives/transition-group@npm:1.0.5"
+  peerDependencies:
+    solid-js: ^1.6.12
+  checksum: 10c0/37e8ed87a0b67e83fcb4399adc5000f92797d9c9472e24be32e6d87cf85899f02ad3718f8eca0b96e18ea00ce28bd71db5469e94b2bb75292afcec633a3c71e9
+  languageName: node
+  linkType: hard
+
 "@solid-primitives/utils@npm:^6.2.3":
   version: 6.2.3
   resolution: "@solid-primitives/utils@npm:6.2.3"
@@ -1986,97 +2084,104 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tauri-apps/api@npm:>=2.0.0-beta.0":
-  version: 2.0.0-beta.6
-  resolution: "@tauri-apps/api@npm:2.0.0-beta.6"
-  checksum: 10c0/f825e355386dc34c1b051aecdf5c1c327c1dbc9a4c71f1f95b2182d38a45ddcfc4e6e7eca3ccfb42fcb96ae1d98c9c3b805f57a228572ed47e4ed608f01f3181
+"@tauri-apps/api@npm:2.0.0-beta.4":
+  version: 2.0.0-beta.4
+  resolution: "@tauri-apps/api@npm:2.0.0-beta.4"
+  checksum: 10c0/56cdd6204dc21edbcb1328ed594f43f47e51361a34f8c73f000ea3549bba6c15535cb81d57d93258af5526a37265722930d1f88a3adb4f876a1bfedc66070fe1
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli-darwin-arm64@npm:2.0.0-beta.11":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli-darwin-arm64@npm:2.0.0-beta.11"
+"@tauri-apps/api@npm:>=2.0.0-beta.0":
+  version: 2.0.0-beta.7
+  resolution: "@tauri-apps/api@npm:2.0.0-beta.7"
+  checksum: 10c0/52106eaf0ce13552a22c750024e711a170418d98f7f891ba655e9908e855dedc4f5401f2719a5eba9e865fb096482765bd60342be84fb673add7c3cac80381eb
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-darwin-arm64@npm:2.0.0-beta.12":
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli-darwin-arm64@npm:2.0.0-beta.12"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli-darwin-x64@npm:2.0.0-beta.11":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli-darwin-x64@npm:2.0.0-beta.11"
+"@tauri-apps/cli-darwin-x64@npm:2.0.0-beta.12":
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli-darwin-x64@npm:2.0.0-beta.12"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli-linux-arm-gnueabihf@npm:2.0.0-beta.11":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli-linux-arm-gnueabihf@npm:2.0.0-beta.11"
+"@tauri-apps/cli-linux-arm-gnueabihf@npm:2.0.0-beta.12":
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli-linux-arm-gnueabihf@npm:2.0.0-beta.12"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli-linux-arm64-gnu@npm:2.0.0-beta.11":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli-linux-arm64-gnu@npm:2.0.0-beta.11"
+"@tauri-apps/cli-linux-arm64-gnu@npm:2.0.0-beta.12":
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli-linux-arm64-gnu@npm:2.0.0-beta.12"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli-linux-arm64-musl@npm:2.0.0-beta.11":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli-linux-arm64-musl@npm:2.0.0-beta.11"
+"@tauri-apps/cli-linux-arm64-musl@npm:2.0.0-beta.12":
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli-linux-arm64-musl@npm:2.0.0-beta.12"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli-linux-x64-gnu@npm:2.0.0-beta.11":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli-linux-x64-gnu@npm:2.0.0-beta.11"
+"@tauri-apps/cli-linux-x64-gnu@npm:2.0.0-beta.12":
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli-linux-x64-gnu@npm:2.0.0-beta.12"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli-linux-x64-musl@npm:2.0.0-beta.11":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli-linux-x64-musl@npm:2.0.0-beta.11"
+"@tauri-apps/cli-linux-x64-musl@npm:2.0.0-beta.12":
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli-linux-x64-musl@npm:2.0.0-beta.12"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli-win32-arm64-msvc@npm:2.0.0-beta.11":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli-win32-arm64-msvc@npm:2.0.0-beta.11"
+"@tauri-apps/cli-win32-arm64-msvc@npm:2.0.0-beta.12":
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli-win32-arm64-msvc@npm:2.0.0-beta.12"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli-win32-ia32-msvc@npm:2.0.0-beta.11":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli-win32-ia32-msvc@npm:2.0.0-beta.11"
+"@tauri-apps/cli-win32-ia32-msvc@npm:2.0.0-beta.12":
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli-win32-ia32-msvc@npm:2.0.0-beta.12"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli-win32-x64-msvc@npm:2.0.0-beta.11":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli-win32-x64-msvc@npm:2.0.0-beta.11"
+"@tauri-apps/cli-win32-x64-msvc@npm:2.0.0-beta.12":
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli-win32-x64-msvc@npm:2.0.0-beta.12"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
 "@tauri-apps/cli@npm:>=2.0.0-beta.0":
-  version: 2.0.0-beta.11
-  resolution: "@tauri-apps/cli@npm:2.0.0-beta.11"
+  version: 2.0.0-beta.12
+  resolution: "@tauri-apps/cli@npm:2.0.0-beta.12"
   dependencies:
-    "@tauri-apps/cli-darwin-arm64": "npm:2.0.0-beta.11"
-    "@tauri-apps/cli-darwin-x64": "npm:2.0.0-beta.11"
-    "@tauri-apps/cli-linux-arm-gnueabihf": "npm:2.0.0-beta.11"
-    "@tauri-apps/cli-linux-arm64-gnu": "npm:2.0.0-beta.11"
-    "@tauri-apps/cli-linux-arm64-musl": "npm:2.0.0-beta.11"
-    "@tauri-apps/cli-linux-x64-gnu": "npm:2.0.0-beta.11"
-    "@tauri-apps/cli-linux-x64-musl": "npm:2.0.0-beta.11"
-    "@tauri-apps/cli-win32-arm64-msvc": "npm:2.0.0-beta.11"
-    "@tauri-apps/cli-win32-ia32-msvc": "npm:2.0.0-beta.11"
-    "@tauri-apps/cli-win32-x64-msvc": "npm:2.0.0-beta.11"
+    "@tauri-apps/cli-darwin-arm64": "npm:2.0.0-beta.12"
+    "@tauri-apps/cli-darwin-x64": "npm:2.0.0-beta.12"
+    "@tauri-apps/cli-linux-arm-gnueabihf": "npm:2.0.0-beta.12"
+    "@tauri-apps/cli-linux-arm64-gnu": "npm:2.0.0-beta.12"
+    "@tauri-apps/cli-linux-arm64-musl": "npm:2.0.0-beta.12"
+    "@tauri-apps/cli-linux-x64-gnu": "npm:2.0.0-beta.12"
+    "@tauri-apps/cli-linux-x64-musl": "npm:2.0.0-beta.12"
+    "@tauri-apps/cli-win32-arm64-msvc": "npm:2.0.0-beta.12"
+    "@tauri-apps/cli-win32-ia32-msvc": "npm:2.0.0-beta.12"
+    "@tauri-apps/cli-win32-x64-msvc": "npm:2.0.0-beta.12"
   dependenciesMeta:
     "@tauri-apps/cli-darwin-arm64":
       optional: true
@@ -2100,7 +2205,16 @@ __metadata:
       optional: true
   bin:
     tauri: tauri.js
-  checksum: 10c0/17ace0b9d6aba30cd9abf2118108d4dcd1a1400bbfaa9f16a18c1b321ba7ac52dfaaaa112348e205b47cdbbf12f240e58d77ebc06e04b3c88fd04c9eeb6c8d09
+  checksum: 10c0/d1a23968e887cc5dba06496322750a7ba6b39d71d336dec9dd6d3aadd3a243ceb63ed0cbbb88402bb540aa8e2149c4221c83f898d30e7cb67f181e2d8291ae05
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-dialog@npm:>=2.0.0-beta":
+  version: 2.0.0-beta.2
+  resolution: "@tauri-apps/plugin-dialog@npm:2.0.0-beta.2"
+  dependencies:
+    "@tauri-apps/api": "npm:2.0.0-beta.4"
+  checksum: 10c0/793fbb72ad1f24483c76820e0a285cf9c3cce40e41ecf45131575a5b6c66bce033bef5e4cfedd352d3c0a8dcb26c3ae09d10d75592aa153c8340a1b88fe84019
   languageName: node
   linkType: hard
 
@@ -2238,7 +2352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.12.2":
+"@types/node@npm:*":
   version: 20.12.2
   resolution: "@types/node@npm:20.12.2"
   dependencies:
@@ -2251,6 +2365,15 @@ __metadata:
   version: 17.0.45
   resolution: "@types/node@npm:17.0.45"
   checksum: 10c0/0db377133d709b33a47892581a21a41cd7958f22723a3cc6c71d55ac018121382de42fbfc7970d5ae3e7819dbe5f40e1c6a5174aedf7e7964e9cb8fa72b580b0
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.12.3":
+  version: 20.12.3
+  resolution: "@types/node@npm:20.12.3"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10c0/45c8485a0e55276b42c26ba1df6c480e4e1a3a3abbf4ea0ff6b4e2823c4f77e32b7e166d4263d464f207cfea5bd4de8879b8df2c7132a727b0346a30191d6bea
   languageName: node
   linkType: hard
 
@@ -2674,9 +2797,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^4.5.13":
-  version: 4.5.13
-  resolution: "astro@npm:4.5.13"
+"astro@npm:^4.5.14":
+  version: 4.5.14
+  resolution: "astro@npm:4.5.14"
   dependencies:
     "@astrojs/compiler": "npm:^2.7.1"
     "@astrojs/internal-helpers": "npm:0.4.0"
@@ -2746,7 +2869,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: 10c0/3833a500a25832191d7b4066db45a056a7cccec8f946d3d6dd5c408ed36bf4daf4a191b49eff44998d6e47c883480611807fd4af7f3c2abbe75e6ef8df5f8e07
+  checksum: 10c0/2534640d356a2a7504a51a4bc2ddeb1ff1d7d7987ecb6f12249fa859a8a60920e0f9c343b29068ca0536fe3dd41c13b61ec3e7a4b47c1d500959600244491b78
   languageName: node
   linkType: hard
 
@@ -2908,16 +3031,6 @@ __metadata:
   checksum: 10c0/5dc729d8e3a9d1d7ab016b36cdda264a327ada0239716df48435163e11d2bf6df25d6e421655a1f52649098ae49555268a654729b7d02768f77c571ab37ef814
   languageName: node
   linkType: hard
-
-"blender-launcher@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "blender-launcher@workspace:."
-  dependencies:
-    turbo: "npm:^1.13.2"
-    typescript: "npm:^5.4.3"
-    wrangler: "npm:^3.43.0"
-  languageName: unknown
-  linkType: soft
 
 "boolbase@npm:^1.0.0":
   version: 1.0.0
@@ -4588,6 +4701,13 @@ __metadata:
     property-information: "npm:^6.0.0"
     space-separated-tokens: "npm:^2.0.0"
   checksum: 10c0/f0b54bbdd710854b71c0f044612db0fe1b5e4d74fa2001633dc8c535c26033269f04f536f9fd5b03f234de1111808f9e230e9d19493bf919432bb24d541719e0
+  languageName: node
+  linkType: hard
+
+"hey-listen@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "hey-listen@npm:1.0.8"
+  checksum: 10c0/38db3028b4756f3d536c0f6a92da53bad577ab649b06dddfd0a4d953f9a46bbc6a7f693c8c5b466a538d6d23dbc469260c848427f0de14198a2bbecbac37b39e
   languageName: node
   linkType: hard
 
@@ -7400,7 +7520,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"solid-js@npm:^1.8.15, solid-js@npm:^1.8.16":
+"solid-js@npm:^1.8.16":
   version: 1.8.16
   resolution: "solid-js@npm:1.8.16"
   dependencies:
@@ -7408,6 +7528,22 @@ __metadata:
     seroval: "npm:^1.0.4"
     seroval-plugins: "npm:^1.0.3"
   checksum: 10c0/5dc88aedd2fe0ecf419d40501b0e119bcb67d130ff3b5842730399084cb89b84a4de24776ca2df25bc2ccc371494f97a95f22928081822a440301519d0e793b2
+  languageName: node
+  linkType: hard
+
+"solid-motionone@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "solid-motionone@npm:1.0.0"
+  dependencies:
+    "@motionone/dom": "npm:^10.16.4"
+    "@motionone/utils": "npm:^10.16.3"
+    "@solid-primitives/props": "npm:^3.1.8"
+    "@solid-primitives/refs": "npm:^1.0.5"
+    "@solid-primitives/transition-group": "npm:^1.0.3"
+    csstype: "npm:^3.1.0"
+  peerDependencies:
+    solid-js: ^1.8.0
+  checksum: 10c0/19a6440c59d24605b9d032dff2d9e64346a079bddb4026165a9be5661a71d8f607b074a68e815a8f67d8da76b60d12118fcc74027308d46264d3ce049ea045d9
   languageName: node
   linkType: hard
 
@@ -7421,6 +7557,18 @@ __metadata:
   peerDependencies:
     solid-js: ^1.3
   checksum: 10c0/04f474704fe60e28835ece852bb6a5ce60106d1d360c2d9ed0f5740751b60672705591b5ae57a35202fd6c13c8cf4eb0e17897e954317e204c2e2bda46b8bb17
+  languageName: node
+  linkType: hard
+
+"solid-transition-group@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "solid-transition-group@npm:0.2.3"
+  dependencies:
+    "@solid-primitives/refs": "npm:^1.0.5"
+    "@solid-primitives/transition-group": "npm:^1.0.2"
+  peerDependencies:
+    solid-js: ^1.6.12
+  checksum: 10c0/584656bedefb03fd91801d858c9abf0de5afc175e9a7bea2023000faa5ed3af4c6e4b8b99dd7ed1069595d362b002d4ae8ca08d030e422b65dc23742fb2ac681
   languageName: node
   linkType: hard
 
@@ -7827,7 +7975,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.2.0, tslib@npm:^2.4.0":
+"tslib@npm:^2.2.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 10c0/e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb
@@ -7840,77 +7988,6 @@ __metadata:
   dependencies:
     safe-buffer: "npm:^5.0.1"
   checksum: 10c0/4c7a1b813e7beae66fdbf567a65ec6d46313643753d0beefb3c7973d66fcec3a1e7f39759f0a0b4465883499c6dc8b0750ab8b287399af2e583823e40410a17a
-  languageName: node
-  linkType: hard
-
-"turbo-darwin-64@npm:1.13.2":
-  version: 1.13.2
-  resolution: "turbo-darwin-64@npm:1.13.2"
-  conditions: os=darwin & cpu=x64
-  languageName: node
-  linkType: hard
-
-"turbo-darwin-arm64@npm:1.13.2":
-  version: 1.13.2
-  resolution: "turbo-darwin-arm64@npm:1.13.2"
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"turbo-linux-64@npm:1.13.2":
-  version: 1.13.2
-  resolution: "turbo-linux-64@npm:1.13.2"
-  conditions: os=linux & cpu=x64
-  languageName: node
-  linkType: hard
-
-"turbo-linux-arm64@npm:1.13.2":
-  version: 1.13.2
-  resolution: "turbo-linux-arm64@npm:1.13.2"
-  conditions: os=linux & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"turbo-windows-64@npm:1.13.2":
-  version: 1.13.2
-  resolution: "turbo-windows-64@npm:1.13.2"
-  conditions: os=win32 & cpu=x64
-  languageName: node
-  linkType: hard
-
-"turbo-windows-arm64@npm:1.13.2":
-  version: 1.13.2
-  resolution: "turbo-windows-arm64@npm:1.13.2"
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"turbo@npm:^1.13.2":
-  version: 1.13.2
-  resolution: "turbo@npm:1.13.2"
-  dependencies:
-    turbo-darwin-64: "npm:1.13.2"
-    turbo-darwin-arm64: "npm:1.13.2"
-    turbo-linux-64: "npm:1.13.2"
-    turbo-linux-arm64: "npm:1.13.2"
-    turbo-windows-64: "npm:1.13.2"
-    turbo-windows-arm64: "npm:1.13.2"
-  dependenciesMeta:
-    turbo-darwin-64:
-      optional: true
-    turbo-darwin-arm64:
-      optional: true
-    turbo-linux-64:
-      optional: true
-    turbo-linux-arm64:
-      optional: true
-    turbo-windows-64:
-      optional: true
-    turbo-windows-arm64:
-      optional: true
-  bin:
-    turbo: bin/turbo
-  checksum: 10c0/f02c06dfdb0339b91bea7d1c9f9f35f0a271df636e49f5f50ad444f6ae22d2205214a71ca31b197a665dc0bf995dc100e47d204c6e674550266efa910505eb7e
   languageName: node
   linkType: hard
 
@@ -8701,9 +8778,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wrangler@npm:^3.43.0":
-  version: 3.43.0
-  resolution: "wrangler@npm:3.43.0"
+"wrangler@npm:^3.44.0":
+  version: 3.44.0
+  resolution: "wrangler@npm:3.44.0"
   dependencies:
     "@cloudflare/kv-asset-handler": "npm:0.3.1"
     "@esbuild-plugins/node-globals-polyfill": "npm:^0.2.3"
@@ -8731,7 +8808,7 @@ __metadata:
   bin:
     wrangler: bin/wrangler.js
     wrangler2: bin/wrangler.js
-  checksum: 10c0/b0de111d9019e4ec1b9b99d0952657a0f9f1a23e7a6c9a1ab8f025cd737673081d8df83e1bdc756a8e0fb71f21f2b9992c43eac0ee3dca717c714678962bb469
+  checksum: 10c0/5d539fbaa8376f4725291974b17885bc2e41f764113ad43584e5cc49b25fbf1376de8fa9336191fa76cdd31c0e604dd3d20ad0128edee9aaf7c45776b24df168
   languageName: node
   linkType: hard
 

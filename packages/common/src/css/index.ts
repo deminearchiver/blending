@@ -41,5 +41,4 @@ export function processSVGData(data: string, pointsLength: number): LinearPoint[
   return points;
 }
 
-import css from "./css";
-export default css;
+export * from "./css";

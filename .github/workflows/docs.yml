@@ -15,9 +15,9 @@ jobs:
           node-version: latest
           cache: yarn
       - name: Install dependencies
-        run: yarn workspaces focus @blender-launcher/docs
+        run: yarn workspaces focus @blending/docs
       - name: Build
-        run: yarn workspace @blender-launcher/docs build
+        run: yarn workspace @blending/docs build
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
@@ -25,4 +25,4 @@ jobs:
           accountId: 38794234ecc4906051a567a03b96d5bd
           apiToken: ${{ secrets.CLOUDFLARE_TOKEN }}
           packageManager: yarn
-          command: pages deploy apps/docs/dist --project-name=blender-launcher
+          command: pages deploy apps/docs/dist --project-name=blending

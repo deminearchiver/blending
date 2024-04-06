@@ -16,6 +16,7 @@
     "menu:allow-new",
     "menu:allow-popup",
     "menu:allow-items",
-    "window:allow-show"
+    "window:allow-show",
+    "dialog:allow-open"
   ]
 }

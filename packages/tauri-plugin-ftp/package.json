@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@blender-launcher/tauri-plugin-ftp",
+  "name": "@blending/tauri-plugin-ftp",
   "packageManager": "yarn@4.1.1",
   "exports": {
     ".": "./src/index.ts"

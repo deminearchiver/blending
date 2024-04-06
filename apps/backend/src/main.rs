@@ -1,27 +1,24 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
-use windows_core::ComInterface;
-use std::{fs::{self, File}, io::{copy, Read, Write}, path::{Path, PathBuf}};
+use tauri_plugin_autostart::{MacosLauncher, ManagerExt};
+use tauri_plugin_dialog::DialogExt;
+use tauri_plugin_log::{Target, TargetKind};
+use windows_core::Interface;
+use std::{env, path::{Path, PathBuf}};
 
-use tauri::{image::Image, menu::{Menu, MenuBuilder, MenuItemKind}, path::BaseDirectory, tray::{ClickType, TrayIconEvent}, App, AppHandle, Manager, Resource, Runtime};
-use webview2_com_sys::Microsoft::Web::WebView2::Win32::{ICoreWebView2Settings8, ICoreWebView2_19};
+use tauri::{image::Image, menu::{MenuBuilder, MenuItemKind}, path::BaseDirectory, tray::ClickType, AppHandle, Manager, Runtime, WebviewWindowBuilder};
+use webview2_com_sys::Microsoft::Web::WebView2::Win32::{ICoreWebView2Settings8, ICoreWebView2_22};
 
+use url::Url;
 
 mod commands;
+mod blender;
 
-// fn build_menu<R: Runtime>(app: &AppHandle<R>) -> tauri::Result<Menu<R>> {
-//   MenuBuilder::new(app)
-//     .separator()
-//     .text("window", "Hide &window")
-//     .quit()
-//     .build()
-// }
-
-fn get_resource<R: Runtime, P: AsRef<Path>>(app: &AppHandle<R>, path: P) -> tauri::Result<PathBuf> {
-  app.path().resolve(PathBuf::from("resources").join(path), BaseDirectory::Resource)
-}
-
-static BLENDER_ICON: &[u8] = include_bytes!("../resources/blender/blender_icon_32x32.png");
+const BLENDER_ICON: &[u8] = include_bytes!("../resources/blender/blender_icon_32x32.png");
+const VISIBILITY_ICON: &[u8] = include_bytes!("../resources/icon_visibility.png");
+const VISIBILITY_OFF_ICON: &[u8] = include_bytes!("../resources/icon_visibility_off.png");
+const PLAY_ICON: &[u8] = include_bytes!("../resources/icon_play.png");
+const CLOSE_ICON: &[u8] = include_bytes!("../resources/icon_close.png");
 
 // struct Progress<R> {
 //   inner: R,
@@ -80,28 +77,70 @@ fn main() {
   // stream.quit().unwrap();
 
   tauri::Builder::default()
+    .plugin(
+      tauri_plugin_log::Builder::new()
+        .targets([
+          Target::new(TargetKind::Stdout),
+          Target::new(TargetKind::LogDir { file_name: None }),
+          Target::new(TargetKind::Webview),
+        ])
+        .build()
+    )
+    .plugin(tauri_plugin_autostart::init(MacosLauncher::LaunchAgent, None))
     .plugin(tauri_plugin_shell::init())
     .plugin(tauri_plugin_window_state::Builder::default().build())
-    .plugin(tauri_plugin_ftp::init())
+    .plugin(
+      tauri_plugin_single_instance::init(|app, args, cwd| {
+
+      })
+    )
+    .plugin(tauri_plugin_dialog::init())
     .setup(|app| {
+      let _ = app.autolaunch().disable();
+
+      #[cfg(any(windows, target_os = "linux"))]
+      {
+        let mut url = None::<Url>;
+        for arg in env::args().skip(1) {
+          if let Ok(result) = Url::parse(&arg) {
+            url = Some(result);
+            break;
+          }
+        }
+        println!("{:?}", url);
+      }
+
+
       let app = app.handle(); 
       let tray = app.tray_by_id("main").unwrap();
 
-      let icon_play = Image::from_path(get_resource(app, "icon_play.png")?)?;
-      let icon_visibility = Image::from_path(get_resource(app, "icon_visibility.png")?)?;
-      let icon_visibility_off = Image::from_path(get_resource(app, "icon_visibility_off.png")?)?;
-      let icon_close = Image::from_path(get_resource(app, "icon_close.png")?)?;
+      // let icon_play = Image::from_path(get_resource(app, "icon_play.png")?)?;
+      // let icon_visibility = Image::from_path(get_resource(app, "icon_visibility.png")?)?;
+      // let icon_visibility_off = Image::from_path(get_resource(app, "icon_visibility_off.png")?)?;
+      // let icon_close = Image::from_path(get_resource(app, "icon_close.png")?)?;
+      let icon_play = Image::from_bytes(PLAY_ICON)?;
+      let icon_visibility = Image::from_bytes(VISIBILITY_ICON)?;
+      let icon_visibility_off = Image::from_bytes(VISIBILITY_OFF_ICON)?;
+      let icon_close = Image::from_bytes(CLOSE_ICON)?;
 
       let menu = MenuBuilder::new(app)
         .icon("blender_4_0", "&Blender 4.0", Image::from_bytes(BLENDER_ICON).unwrap())
         .icon("blender_4_1", "&Blender 4.1", icon_play.clone())
         .separator()
         .icon("visibility", "Hide &window", icon_visibility_off.clone())
-        .icon("quit", "&Exit", icon_close)
+        .icon("exit", "&Exit", icon_close)
         .build().unwrap();
       tray
         .set_menu(Some(menu.clone()))
         .unwrap();
+      tray.on_menu_event(|app, event| {
+        match event.id.0.as_str() {
+          "exit" => {
+            app.exit(0);
+          },
+          _ => {},
+        }
+      });
       app.on_tray_icon_event(move |app, event| {
         let window = app.get_webview_window("main").unwrap();
         let is_visible = window.is_visible().unwrap();
@@ -135,7 +174,7 @@ fn main() {
         unsafe {
           let webview = controller
             .CoreWebView2().unwrap()
-            .cast::<ICoreWebView2_19>().unwrap();
+            .cast::<ICoreWebView2_22>().unwrap();
           let settings = webview
             .Settings().unwrap()
             .cast::<ICoreWebView2Settings8>().unwrap();

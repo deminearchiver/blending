@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@blender-launcher/common",
+  "name": "@blending/common",
   "exports": {
     "./css": "./src/css/index.ts",
     "./animation": "./src/animation/index.ts",

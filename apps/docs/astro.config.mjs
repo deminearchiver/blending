@@ -7,7 +7,7 @@ import starlightBlog from "starlight-blog";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://blender-launcher.pages.dev/",
+  site: "https://blending.pages.dev/",
   vite: {
     ssr: {
       external: [
@@ -27,27 +27,27 @@ export default defineConfig({
             deminearchiver: {
               name: "deminearchiver",
               picture: "https://github.com/deminearchiver.png?size=40",
-              title: "Creator of Blender Launcher",
+              title: "Creator of Blending",
               url: "https://github.com/deminearchiver",
             }
           }
         }),
       ],
-      title: "Blender Launcher",
+      title: "Blending",
       editLink: {
-        baseUrl: "https://github.com/deminearchiver/blender-launcher/edit/main/apps/docs/"
+        baseUrl: "https://github.com/deminearchiver/blending/edit/main/apps/docs/"
       },
       logo: {
         src: "./public/favicon.svg"
       },
       social: {
-        github: "https://github.com/deminearchiver/blender-launcher",
+        github: "https://github.com/deminearchiver/blending",
         discord: "https://discord.gg/"
       },
       sidebar: [{
         label: "Quick start",
         items: [{
-          label: "What is Blender Launcher?",
+          label: "What is Blending?",
           link: "/guides/"
         }, {
           label: "Installation",

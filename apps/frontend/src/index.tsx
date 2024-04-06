@@ -6,11 +6,10 @@ import { Router, Route } from "@solidjs/router";
 
 import "./global.css";
 
+import "material-symbols/rounded.css";
+import { Test } from "./components/onboarding";
+
 render(
-  () => (
-    <Router>
-      <Route  component={App} />
-    </Router>
-  ),
+  () => <Test />,
   document.getElementById("root")!,
 );

@@ -13,7 +13,7 @@ interface FloatingActionButtonFactoryOptions {
   variant: "primary" | "secondary" | "tertiary" | "surface";
 }
 
-export const FloatingActionButtonFactory = (options: FloatingActionButtonFactoryOptions) => {
+export const factory = (options: FloatingActionButtonFactoryOptions) => {
   const component: ParentComponent<FloatingActionButtonProps> = (props) => {
     let ref!: HTMLElement;
 

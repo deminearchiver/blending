@@ -1,11 +1,12 @@
 {
   "private": true,
-  "name": "@blender-launcher/material",
+  "name": "@blending/material",
   "exports": {
     "./theme": "./src/theme/index.ts",
     "./theme/global/dark": "./src/theme/global/dark.css.ts",
     "./components/splash": "./src/components/splash/index.ts",
     "./components/splash/css": "./src/components/splash/css.ts",
+    "./components/focus": "./src/components/focus/index.ts",
     "./components/icon": "./src/components/icon/index.ts",
     "./components/icon/css": "./src/components/icon/css.ts",
     "./components/button": "./src/components/button/index.ts",
@@ -15,6 +16,7 @@
     "./components/card": "./src/components/card/index.ts",
     "./components/search": "./src/components/search/index.ts",
     "./components/navigation-rail": "./src/components/navigation-rail/index.ts",
+    "./components/top-app-bar": "./src/components/top-app-bar/index.ts",
     "./symbols": "./src/symbols/index.ts"
   },
   "packageManager": "yarn@4.1.1",
@@ -24,11 +26,12 @@
     "typescript": "^5.4.3"
   },
   "dependencies": {
-    "@blender-launcher/common": "workspace:^",
+    "@blending/common": "workspace:^",
     "@material/material-color-utilities": "^0.2.7",
     "@solid-primitives/event-listener": "^2.3.3",
     "@solid-primitives/jsx-tokenizer": "^1.0.10",
     "@solid-primitives/refs": "^1.0.8",
+    "@solid-primitives/scroll": "^2.0.23",
     "@solid-primitives/utils": "^6.2.3",
     "@vanilla-extract/css": "^1.14.2",
     "@vanilla-extract/dynamic": "^2.1.0",

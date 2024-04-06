@@ -2,7 +2,7 @@ import { Accessor, Component, ParentComponent, Ref, createComponent, createEffec
 import { splashStyle, surfaceHoveredStyle, surfacePressedStyle, surfaceStyle } from "./splash.css";
 import { createEventListenerMap, makeEventListenerStack } from "@solid-primitives/event-listener";
 import { MaybeAccessor } from "@solid-primitives/utils";
-import { wait } from "@blender-launcher/common/utils";
+import { wait } from "@blending/common/utils";
 
 const PRESS_GROW_MS = 450;
 const MINIMUM_PRESS_MS = 225;

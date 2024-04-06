@@ -36,14 +36,9 @@ const i18n = (): Plugin => {
 export default defineConfig({
   plugins: [
     solid(),
-    vanillaExtractPlugin({
-      identifiers: ({ hash }) => `blender-launcher_${hash}` 
-    }),
+    vanillaExtractPlugin(),
     i18n(),
   ],
-  resolve: {
-    preserveSymlinks: true,
-  },
   clearScreen: false,
   server: {
     port: 1420,

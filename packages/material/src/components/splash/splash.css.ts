@@ -1,6 +1,6 @@
 import { ComplexStyleRule, fallbackVar, style } from "@vanilla-extract/css";
 import { splash } from "./css";
-import css from "@blender-launcher/common/css";
+import { css } from "@blending/common/css";
 
 const sharedStyles: ComplexStyleRule = {
   borderRadius: "inherit",

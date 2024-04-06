@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  Blender Launcher
+    Blending
   <br>
 </h1>
 
@@ -44,4 +44,4 @@
 
 ## License
 
-**Blender Launcher** is licensed under the [**ISC License**](LICENSE).
+**Blending** is licensed under the [**ISC License**](LICENSE).

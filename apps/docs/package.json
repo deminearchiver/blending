@@ -1,5 +1,5 @@
 {
-  "name": "@blender-launcher/docs",
+  "name": "@blending/docs",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -8,20 +8,20 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "wrangler pages deploy dist --project-name=blender-launcher"
+    "deploy": "wrangler pages deploy dist --project-name=blending"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/cloudflare": "^10.0.2",
     "@astrojs/solid-js": "^4.0.1",
     "@astrojs/starlight": "^0.21.3",
-    "@blender-launcher/material": "workspace:^",
+    "@blending/material": "workspace:^",
     "@solid-primitives/bounds": "^0.0.121",
     "@solid-primitives/event-listener": "^2.3.3",
     "@solid-primitives/presence": "^0.0.6",
     "@solid-primitives/scroll": "^2.0.23",
     "@solid-primitives/utils": "^6.2.3",
-    "astro": "^4.5.13",
+    "astro": "^4.5.14",
     "hast": "^1.0.0",
     "material-symbols": "^0.17.1",
     "rehype": "^13.0.1",
@@ -33,6 +33,6 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "wrangler": "^3.43.0"
+    "wrangler": "^3.44.0"
   }
 }

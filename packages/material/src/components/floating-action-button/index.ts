@@ -1,15 +1,15 @@
-import { FloatingActionButtonFactory } from "./floating-action-button";
+import { factory } from "./floating-action-button";
 export const FloatingActionButton = {
-  Primary: FloatingActionButtonFactory({
+  Primary: factory({
     variant: "primary"
   }),
-  Secondary: FloatingActionButtonFactory({
+  Secondary: factory({
     variant: "secondary"
   }),
-  Tertiary: FloatingActionButtonFactory({
+  Tertiary: factory({
     variant: "tertiary"
   }),
-  Surface: FloatingActionButtonFactory({
+  Surface: factory({
     variant: "surface"
   }),
 };

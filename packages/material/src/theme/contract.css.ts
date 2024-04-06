@@ -1,4 +1,4 @@
-import { capitalize } from "@blender-launcher/common/utils";
+import { capitalize } from "@blending/common/utils";
 import { createTheme, createThemeContract } from "@vanilla-extract/css";
 
 

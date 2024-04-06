@@ -1,5 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
-import { fontVariationSettings } from "@blender-launcher/common/css";
+import { fontVariationSettings } from "@blending/common/css";
 
 // globalStyle(
 //   ".material-symbols-rounded",

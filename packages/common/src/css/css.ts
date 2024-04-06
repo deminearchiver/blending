@@ -1,13 +1,24 @@
+import { merge } from "../utils";
+
+interface CSSSyntaxNamespace {
+  function: (name: TemplateStringsArray, ...values: any[]) => (...args: string[]) => string;
+  quote: () => string,
+}
+
 interface CSSNamespace {
-  raw: CSSRawNamespace;
-  // linearGradient: () => string;
+  syntax: CSSSyntaxNamespace;
+  fontFamily: (...families: string[]) => string;
+  linearGradient: (options: LinearGradientOptions) => string;
   radialGradient: (options: RadialGradientOptions) => string;
 }
 
 
-interface CSSRawNamespace {
-  function: (name: string, ...args: string[]) => string;
+
+
+interface LinearGradientOptions {
+  
 }
+
 
 type RadialGradientShape = "ellipse" | "circle";
 type RadialGradientSize =
@@ -19,6 +30,7 @@ type RadialGradientPosition = `at ${string}`;
 
 type RadialGradientStop = [stop: string, percentage: string];
 
+
 interface RadialGradientOptions {
   shape?: RadialGradientShape;
   size?: RadialGradientSize;
@@ -26,9 +38,22 @@ interface RadialGradientOptions {
   stops: RadialGradientStop[];
 }
 
-const css: CSSNamespace = {
-  raw: {
-    function: (name, ...args) => `${name}(${args.join(",")})`,
+
+export const css: CSSNamespace = {
+  syntax: {
+    function: (strings, ...values) => {
+      const name = merge(strings, ...values);
+      return (...args) => `${name}(${args.join(",")})`
+    },
+    quote: () => `"`,
+  },
+  fontFamily: (...families) => {
+    return families
+      .map(family => family.includes(" ") ? `${css.syntax.quote()}${family}${css.syntax.quote()}` : family)
+      .join(",");
+  },
+  linearGradient: () => {
+    return LINEAR_GRADIENT();
   },
   radialGradient: (
     { shape, size, position, stops },
@@ -39,12 +64,13 @@ const css: CSSNamespace = {
       ...(position ? [position] : []),
     ];
     
-    return css.raw.function(
-      "radial-gradient",
+    return RADIAL_GRADIENT(
       parts.join(" "),
       ...stops.map(stop => stop.join(" ")),
     );
-  }
+  },
 };
 
-export default css;
+
+const LINEAR_GRADIENT = css.syntax.function`linear-gradient`;
+const RADIAL_GRADIENT = css.syntax.function`radial-gradient`;

@@ -1,17 +1,21 @@
 {
-  "name": "blender-launcher",
+  "private": true,
+  "name": "@deminearchiver/blending",
+  "version": "0.0.0",
+  "author": {
+    "name": "deminearchiver",
+    "url": "https://github.com/deminearchiver"
+  },
   "packageManager": "yarn@4.1.1",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev --filter=@blender-launcher/backend",
-    "build": "turbo run build --filter=@blender-launcher/backend"
+    ":": "yarn workspace"
   },
   "devDependencies": {
-    "turbo": "^1.13.2",
     "typescript": "^5.4.3",
-    "wrangler": "^3.43.0"
+    "wrangler": "^3.44.0"
   }
 }

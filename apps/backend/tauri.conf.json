@@ -1,7 +1,7 @@
 {
   "productName": "blending",
   "version": "0.0.0",
-  "identifier": "dev.deminearchiver.blenderlauncher",
+  "identifier": "dev.deminearchiver.blending",
   "build": {
     "beforeDevCommand": "yarn workspace @blending/frontend dev",
     "devUrl": "http://localhost:1420",

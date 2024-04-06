@@ -4,7 +4,12 @@ run-name: Building application
 on:
   push:
     branches: [main]
-  workflow_dispatch: 
+    paths:
+      - ".github/workflows/build.yml"
+      - "apps/**"
+      - "!apps/docs/**"
+      - "packages/**"
+  workflow_dispatch:
 
 jobs:
   build:

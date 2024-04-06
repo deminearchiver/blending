@@ -14,7 +14,6 @@
     "@blending/css": "workspace:^",
     "@blending/material": "workspace:^",
     "@blending/tauri-plugin-dwm": "workspace:^",
-    "@blending/tauri-plugin-ftp": "workspace:^",
     "@material/material-color-utilities": "^0.2.7",
     "@solid-primitives/context": "^0.2.3",
     "@solidjs/router": "^0.13.1",

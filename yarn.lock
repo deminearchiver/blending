@@ -641,7 +641,6 @@ __metadata:
     "@blending/css": "workspace:^"
     "@blending/material": "workspace:^"
     "@blending/tauri-plugin-dwm": "workspace:^"
-    "@blending/tauri-plugin-ftp": "workspace:^"
     "@material/material-color-utilities": "npm:^0.2.7"
     "@solid-primitives/context": "npm:^0.2.3"
     "@solid-primitives/event-listener": "npm:^2.3.3"
@@ -696,16 +695,6 @@ __metadata:
   dependencies:
     "@blending/config": "workspace:^"
     "@tauri-apps/api": "npm:>=2.0.0-beta"
-    typescript: "npm:^5.4.4"
-  languageName: unknown
-  linkType: soft
-
-"@blending/tauri-plugin-ftp@workspace:^, @blending/tauri-plugin-ftp@workspace:packages/tauri-plugin-ftp":
-  version: 0.0.0-use.local
-  resolution: "@blending/tauri-plugin-ftp@workspace:packages/tauri-plugin-ftp"
-  dependencies:
-    "@tauri-apps/api": "npm:>=2.0.0-beta.0"
-    "@tauri-apps/cli": "npm:>=2.0.0-beta.0"
     typescript: "npm:^5.4.4"
   languageName: unknown
   linkType: soft

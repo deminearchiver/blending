@@ -30,7 +30,6 @@ suppaftp = { version = "5.3"}
 url = "2"
 notify = "6"
 
-tauri-plugin-ftp.workspace = true
 tauri-plugin-dwm.workspace = true
 
 windows-core = "0.54"

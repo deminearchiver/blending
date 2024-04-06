@@ -1,4 +1,6 @@
-name: Build
+name: Build application
+run-name: Building application
+
 on:
   push:
     branches: [main]

@@ -32,20 +32,23 @@ type ColorInterpolationMethod = ColorSpace | [ColorSpace, HueInterpolationMethod
 
 type ColorMixColor = string | [string, `${number}%`];
 
-export const colorMix = (
+
+
+const parseColor = (color: ColorMixColor) => {
+  return typeof color === "string" ? color : color.join(" ");
+}
+
+export function colorMix(
   method: ColorInterpolationMethod,
   color1: ColorMixColor,
   color2: ColorMixColor,
-) => {
+) {
   let parts: string[] = typeof method === "string" ? [method] : method;
 
-  const processColor = (color: ColorMixColor) => {
-    return typeof color === "string" ? color : color.join(" ");
-  }
 
   return COLOR_MIX(
     `in ${parts.join(" ")}`,
-    processColor(color1),
-    processColor(color2),
+    parseColor(color1),
+    parseColor(color2),
   );
 }

@@ -19,17 +19,17 @@ interface RadialGradientOptions {
   position?: string;
 }
 
-export const radialGradient = (
+export function radialGradient(
   options?: RadialGradientOptions,
   ...stops: RadialStop[]
-) => {
+) {
   const parts: string[] = [];
-  if(options.shape != null) parts.push(options.shape);
-  if(options.size != null) parts.push(options.size);
-  if(options.position != null) parts.push(options.position);
+  if(options?.shape != null) parts.push(options.shape);
+  if(options?.size != null) parts.push(options.size);
+  if(options?.position != null) parts.push(options.position);
 
   return RADIAL_GRADIENT(
-    parts.join(" "),
+    ...parts.length > 0 ? parts.join(" ") : [],
     ...stops.map(
       stop => typeof stop === "string" ? stop : stop.join(" "),
     ),

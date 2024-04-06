@@ -2,69 +2,6 @@ import { createGlobalTheme, createThemeContract } from "@vanilla-extract/css";
 import { Offset, ThreePointCubic } from "@blending/common/animation";
 
 
-type NullableTokens = Parameters<typeof createThemeContract>["0"];
-type ArrayTokens = {
-  [key: string]: string | string[] | ArrayTokens | null;
-};
-const contract = <Tokens extends ArrayTokens>(tokens: Tokens): NullableTokens => {
-  type Value =
-    | null
-    | string
-    | string[]
-    | {
-      [key: string]: Value;
-    };
-  const process = (value: Value): Value => {
-    if(value == null) return value;
-    if(Array.isArray(value)) {
-      return Object.fromEntries(
-        value.map(key => [key, ""]),
-      );
-    }
-    if(typeof value === "object") {
-      return Object.fromEntries(
-        Object.entries(value)
-          .map(([key, value]) => [key, process(value)]),
-      )
-    }
-    return value;
-  }
-  // @ts-expect-error
-  return process(tokens);
-
-  // const entries = Object.entries(tokens).map(
-  //   ([key, value]) => {
-  //     if(value == null) return [key, value];
-  //     if(Array.isArray(value)) {
-  //       return [key, Object.fromEntries(value.map(key => [key, ""]))];
-  //     }
-  //     if(typeof value === "object") {
-  //       return [key, contract(value)];
-  //     }
-  //     return [key, value];
-  //   }
-  // );
-  // return Object.fromEntries(entries);
-}
-
-
-console.dir(
-  contract({
-    sys: {
-      color: [
-        "primary",
-        "onPrimary",
-        "primaryContainer",
-        "onPrimaryContainer",
-      ],
-      test: {
-        test: ["lol", "test"]
-      }
-    }
-  }),
-  {depth: null}
-);
-
 export const darkTheme = createGlobalTheme(
   ":root",
   {
@@ -105,7 +42,7 @@ export const darkTheme = createGlobalTheme(
 
       inverseSurface: "#E6E0E9",
       inverseOnSurface: "#322F35",
-      
+
       surfaceTint: "#D0BCFF",
 
       outline: "#938F99",

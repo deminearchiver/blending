@@ -1,5 +1,6 @@
 {
   "extends": [
     "@blending/config/tsconfigs/base",
+    "@blending/config/tsconfigs/strict",
   ]
 }

@@ -12,22 +12,23 @@ type Angle = number;
 
 type LinearGradientDirection = SideOrCorner | Angle;
 
-export const linearGradient = (
-  direction?: LinearGradientDirection,
+export function linearGradient(
+  // direction?: LinearGradientDirection,
+  direction?: string,
   ...stops: LinearStop[]
-) => {
-  let position: string;
-  if(typeof direction === "number") {
-    position = `${direction}deg`;
-  } else if(typeof direction === "string") {
-    position = `to ${direction}`;
-  } else if(Array.isArray(direction)) {
-    position = `to ${direction.join(" ")}`;
-  }
+) {
+  // let position: string;
+  // if(typeof direction === "number") {
+  //   position = `${direction}deg`;
+  // } else if(typeof direction === "string") {
+  //   position = `to ${direction}`;
+  // } else {
+  //   position = `to ${direction.join(" ")}`;
+  // }
 
 
   return LINEAR_GRADIENT(
-    position,
+    ...direction != null ? [direction] : [],
     ...stops.map(
       stop => stop.join(" "),
     ),

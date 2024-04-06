@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { darkTheme } from "../../theme/global/dark.css";
-import { colorMix } from "@blending/common/css";
+import css from "@blending/css";
 import { splash } from "../splash/css";
 
 export const buttonStyle = style({
@@ -17,14 +17,14 @@ export const buttonStyle = style({
   cursor: "pointer",
 
   ":disabled": {
-    color: colorMix(
+    color: css.colorMix(
       "srgb",
-      [darkTheme.color.onSurface, 38],
+      [darkTheme.color.onSurface, "38%"],
       "transparent",
     ),
-    backgroundColor: colorMix(
+    backgroundColor: css.colorMix(
       "srgb",
-      [darkTheme.color.onSurface, 12],
+      [darkTheme.color.onSurface, "12%"],
       "transparent",
     ),
   }
@@ -68,14 +68,14 @@ export const elevatedButtonStyle = style([
     color: darkTheme.color.primary,
     backgroundColor: darkTheme.color.surfaceContainerLow,
     ":disabled": {
-      color: colorMix(
+      color: css.colorMix(
         "srgb",
-        [darkTheme.color.onSurface, 38],
+        [darkTheme.color.onSurface, "38%"],
         "transparent",
       ),
-      backgroundColor: colorMix(
+      backgroundColor: css.colorMix(
         "srgb",
-        [darkTheme.color.onSurface, 12],
+        [darkTheme.color.onSurface, "12%"],
         "transparent",
       ),
     },
@@ -91,14 +91,14 @@ export const filledButtonStyle = style([
     color: darkTheme.color.onPrimary,
     backgroundColor: darkTheme.color.primary,
     ":disabled": {
-      color: colorMix(
+      color: css.colorMix(
         "srgb",
-        [darkTheme.color.onSurface, 38],
+        [darkTheme.color.onSurface, "38%"],
         "transparent",
       ),
-      backgroundColor: colorMix(
+      backgroundColor: css.colorMix(
         "srgb",
-        [darkTheme.color.onSurface, 12],
+        [darkTheme.color.onSurface, "12%"],
         "transparent",
       ),
     },
@@ -114,14 +114,14 @@ export const tonalButtonStyle = style([
     color: darkTheme.color.onSecondaryContainer,
     backgroundColor: darkTheme.color.secondaryContainer,
     ":disabled": {
-      color: colorMix(
+      color: css.colorMix(
         "srgb",
-        [darkTheme.color.onSurface, 38],
+        [darkTheme.color.onSurface, "38%"],
         "transparent",
       ),
-      backgroundColor: colorMix(
+      backgroundColor: css.colorMix(
         "srgb",
-        [darkTheme.color.onSurface, 12],
+        [darkTheme.color.onSurface, "12%"],
         "transparent",
       ),
     },
@@ -137,14 +137,14 @@ export const outlinedButtonStyle = style([
     color: darkTheme.color.primary,
     border: `1px solid ${darkTheme.color.outline}`,
     ":disabled": {
-      color: colorMix(
+      color: css.colorMix(
         "srgb",
-        [darkTheme.color.onSurface, 38],
+        [darkTheme.color.onSurface, "38%"],
         "transparent",
       ),
-      borderColor: colorMix(
+      borderColor: css.colorMix(
         "srgb",
-        [darkTheme.color.onSurface, 12],
+        [darkTheme.color.onSurface, "12%"],
         "transparent",
       ),
     },
@@ -159,9 +159,9 @@ export const textButtonStyle = style([
   {
     color: darkTheme.color.primary,
     ":disabled": {
-      color: colorMix(
+      color: css.colorMix(
         "srgb",
-        [darkTheme.color.onSurface, 38],
+        [darkTheme.color.onSurface, "38%"],
         "transparent",
       ),
     },

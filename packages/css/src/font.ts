@@ -31,13 +31,13 @@ export const font = (options: FontOptions) => {
   return parts.join(" ");
 }
 
-export const fontFamily = (...families: string[]) => {
+export function fontFamily(...families: string[]) {
   return families
     .map(family => family.includes(" ") ? `"${family}"` : family)
     .join(",");
 }
 
-export const fontVariationSettings = (settings: Record<string, number>) => {
+export function fontVariationSettings(settings: Record<string, number>) {
   return Object.entries(settings)
     .map(
       ([key, value]) => `"${key}" ${value}`

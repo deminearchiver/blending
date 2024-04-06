@@ -11,12 +11,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: swatinem/rust-cache@v2
       - uses: actions/setup-node@v4
         with:
           node-version: latest
           cache: yarn
-      - run: yarn
-      - run: yarn workspace @blending/backend build
+      - name: Install dependencies
+        run: yarn
+      - name: Build
+        run: yarn workspace @blending/backend build
       - uses: actions/upload-artifact@v4
         with:
           name: blending-windows-portable

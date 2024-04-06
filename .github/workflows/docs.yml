@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: cloudflare-pages
@@ -34,7 +34,7 @@ jobs:
           node-version: latest
           cache: yarn
       - name: Install dependencies
-        run: yarn workspaces focus @blending/docs
+        run: yarn install --immutable
       - name: Build
         run: yarn workspace @blending/docs build
       - name: Deploy

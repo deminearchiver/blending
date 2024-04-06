@@ -4,25 +4,26 @@ run-name: Building application
 on:
   push:
     branches: [main]
-    paths:
-      - ".github/workflows/build.yml"
-      - "apps/**"
-      - "!apps/docs/**"
-      - "packages/**"
+    paths-ignore:
+      - "apps/docs/**"
   workflow_dispatch:
 
 jobs:
-  build:
+  build-windows:
+    name: Build (Windows)
+    strategy:
+      fail-fast: false
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: swatinem/rust-cache@v2
       - uses: actions/setup-node@v4
         with:
           node-version: latest
           cache: yarn
-      - name: Install dependencies
-        run: yarn
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: swatinem/rust-cache@v2
+      - name: Install project dependencies
+        run: yarn install --immutable
       - name: Build
         run: yarn workspace @blending/backend build
       - uses: actions/upload-artifact@v4
@@ -37,3 +38,25 @@ jobs:
         with:
           name: blending-windows-bundle
           path: target/release/bundle/
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: yarn
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: swatinem/rust-cache@v2
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+      - name: Install project dependencies
+        run: yarn install --immutable
+      - name: Build
+        run: yarn workspace @blending/backend build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: blending-linux
+          path: target/release/

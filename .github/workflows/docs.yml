@@ -5,6 +5,7 @@ on:
   push:
     branches: [ main ]
     paths:
+      - ".github/workflows/docs.yml"
       - "apps/docs/**"
       - "packages/**"
       - "!packages/tauri-*/**"

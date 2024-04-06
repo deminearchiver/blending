@@ -96,7 +96,6 @@ fn main() {
 
       })
     )
-    .plugin(tauri_plugin_dwm::init())
     .plugin(tauri_plugin_dialog::init())
     .setup(|app| {
       let _ = app.autolaunch().disable();

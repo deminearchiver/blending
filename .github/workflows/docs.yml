@@ -4,6 +4,12 @@ run-name: Deploying to Cloudflare Pages
 on:
   push:
     branches: [ main ]
+    paths:
+      - "apps/docs/**"
+      - "packages/**"
+      - "!packages/tauri-*/**"
+  schedule:
+    - cron: "0 10 * * SUN"
   workflow_dispatch:
 
 
@@ -11,10 +17,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions: 
+    permissions:
       contents: read
       deployments: write
-    environment: 
+    environment:
       name: cloudflare-pages
       url: ${{ steps.deploy.outputs.deployment-url }}
     steps:

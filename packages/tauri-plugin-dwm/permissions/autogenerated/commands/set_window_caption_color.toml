@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-set-window-caption-color"
+description = "Enables the set_window_caption_color command without any pre-configured scope."
+commands.allow = ["set_window_caption_color"]
+
+[[permission]]
+identifier = "deny-set-window-caption-color"
+description = "Denies the set_window_caption_color command without any pre-configured scope."
+commands.deny = ["set_window_caption_color"]

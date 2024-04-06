@@ -29,7 +29,7 @@
     "solid-js": "^1.8.16",
     "starlight-blog": "^0.5.1",
     "starlight-image-zoom": "^0.2.0",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.4",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {

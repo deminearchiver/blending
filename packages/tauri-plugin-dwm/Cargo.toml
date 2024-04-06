@@ -1,0 +1,23 @@
+[package]
+name = "tauri-plugin-dwm"
+version = "0.0.0"
+description = "Desktop Window Manager"
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+links = "tauri-plugin-dwm"
+
+[build-dependencies]
+tauri-plugin = { version = "2.0.0-beta", features = ["build"] }
+
+[dependencies]
+tauri = { version = "2.0.0-beta" }
+serde = "1"
+thiserror = "1"
+raw-window-handle = "0.6"
+csscolorparser = { version = "0.6", features = ["named-colors", "serde"] }
+
+
+[dependencies.windows-sys]
+version = "0.52"
+features = ["Win32_Foundation"]

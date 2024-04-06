@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "@blending/css",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./syntax": "./src/syntax/index.ts"
+  },
+  "packageManager": "yarn@4.1.1",
+  "dependencies": {
+    "@vanilla-extract/css": "^1.14.2"
+  },
+  "devDependencies": {
+    "@blending/config": "workspace:^",
+    "@blending/utils": "workspace:^",
+    "typescript": "^5.4.4"
+  }
+}

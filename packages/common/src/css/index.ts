@@ -1,15 +1,5 @@
 import { svgPathProperties as SVGPathProperties } from "svg-path-properties";
 
-export function fontVariationSettings(values: Record<string, number>) {
-  return Object.entries(values)
-    .map(
-      ([key, value]) => `"${key}" ${value}`
-    )
-    .join(",");
-}
-
-export * from "./functions/color-mix"; 
-
 
 export type LinearPoint = [pos: number, val: number];
 
@@ -40,5 +30,3 @@ export function processSVGData(data: string, pointsLength: number): LinearPoint[
   }
   return points;
 }
-
-export * from "./css";

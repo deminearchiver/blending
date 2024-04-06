@@ -13,6 +13,8 @@ use url::Url;
 
 mod commands;
 mod blender;
+mod scraper;
+mod settings;
 
 const BLENDER_ICON: &[u8] = include_bytes!("../resources/blender/blender_icon_32x32.png");
 const VISIBILITY_ICON: &[u8] = include_bytes!("../resources/icon_visibility.png");
@@ -89,12 +91,12 @@ fn main() {
     .plugin(tauri_plugin_autostart::init(MacosLauncher::LaunchAgent, None))
     .plugin(tauri_plugin_shell::init())
     .plugin(tauri_plugin_window_state::Builder::default().build())
-    .plugin(tauri_plugin_cli::init())
     .plugin(
       tauri_plugin_single_instance::init(|app, args, cwd| {
 
       })
     )
+    .plugin(tauri_plugin_dwm::init())
     .plugin(tauri_plugin_dialog::init())
     .setup(|app| {
       let _ = app.autolaunch().disable();

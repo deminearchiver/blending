@@ -5,10 +5,10 @@ import { App } from "./App";
 import { Router, Route } from "@solidjs/router";
 
 import "./global.css";
+import "@blending/material/theme/global/dark";
 
 import "material-symbols/rounded.css";
 import { Test } from "./components/onboarding";
-
 render(
   () => <Test />,
   document.getElementById("root")!,

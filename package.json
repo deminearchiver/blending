@@ -13,12 +13,15 @@
   ],
   "scripts": {
     ":": "yarn workspace",
-    ":docs": "yarn workspace @blending/docs",
-    ":backend": "yarn workspace @blending/backend",
-    ":frontend": "yarn workspace @blending/frontend"
+    ":docs": "yarn : @blending/docs",
+    ":backend": "yarn : @blending/backend",
+    ":frontend": "yarn : @blending/frontend",
+    "app:dev": "yarn :backend dev",
+    "app:build": "yarn :backend build",
+    "docs:dev": "yarn :docs dev",
+    "docs:build": "yarn :docs build"
   },
   "devDependencies": {
-    "typescript": "^5.4.3",
     "wrangler": "^3.44.0"
   }
 }

@@ -1,6 +1,6 @@
 import { ComplexStyleRule, fallbackVar, style } from "@vanilla-extract/css";
 import { splash } from "./css";
-import { css } from "@blending/common/css";
+import css from "@blending/css";
 
 const sharedStyles: ComplexStyleRule = {
   borderRadius: "inherit",
@@ -43,13 +43,11 @@ export const surfaceStyle = style({
     //     transparent 100%
     //   )
     // `,
-    background: css.radialGradient({
-      size: "closest-side",
-      stops: [
-        [`${splash.theme.pressedColor}`, "max(calc(100% - 70px), 65%)"],
-        ["transparent", "100%"]
-      ]
-    }),
+    background: css.radialGradient(
+      { size: "closest-side" },
+      [`${splash.theme.pressedColor}`, "max(calc(100% - 70px), 65%)"],
+      ["transparent", "100%"]
+    ),
     transformOrigin: "center center",
     transition: "opacity 375ms linear",
   },

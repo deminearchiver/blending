@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@blending/common": "workspace:^",
+    "@blending/css": "workspace:^",
     "@blending/material": "workspace:^",
+    "@blending/tauri-plugin-dwm": "workspace:^",
     "@blending/tauri-plugin-ftp": "workspace:^",
     "@material/material-color-utilities": "^0.2.7",
     "@solid-primitives/context": "^0.2.3",
@@ -31,7 +33,7 @@
     "@solid-primitives/refs": "^1.0.8",
     "@types/node": "^20.12.3",
     "@vanilla-extract/vite-plugin": "^4.0.7",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.4",
     "vite": "^5.2.7",
     "vite-plugin-solid": "^2.10.2"
   }

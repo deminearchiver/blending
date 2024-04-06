@@ -1,5 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
-import { fontVariationSettings } from "@blending/common/css";
+import css from "@blending/css";
 
 // globalStyle(
 //   ".material-symbols-rounded",
@@ -12,7 +12,7 @@ export const iconStyle = style({
   userSelect: "none",
   pointerEvents: "none",
   fontVariationSettings:
-    fontVariationSettings({
+    css.fontVariationSettings({
       FILL: 0,
       wght: 400,
       GRAD: 0,

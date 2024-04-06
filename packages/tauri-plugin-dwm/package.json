@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "@blending/tauri-plugin-dwm",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./api/index.ts"
+  },
+  "packageManager": "yarn@4.1.1",
+  "devDependencies": {
+    "@blending/config": "workspace:^",
+    "@tauri-apps/api": ">=2.0.0-beta",
+    "typescript": "^5.4.4"
+  }
+}

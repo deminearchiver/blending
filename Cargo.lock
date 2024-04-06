@@ -450,6 +450,7 @@ dependencies = [
  "tauri-plugin-autostart",
  "tauri-plugin-cli",
  "tauri-plugin-dialog",
+ "tauri-plugin-dwm",
  "tauri-plugin-ftp",
  "tauri-plugin-log",
  "tauri-plugin-shell",
@@ -4677,6 +4678,19 @@ dependencies = [
  "tauri-plugin",
  "tauri-plugin-fs",
  "thiserror",
+]
+
+[[package]]
+name = "tauri-plugin-dwm"
+version = "0.0.0"
+dependencies = [
+ "csscolorparser",
+ "raw-window-handle 0.6.0",
+ "serde",
+ "tauri",
+ "tauri-plugin",
+ "thiserror",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]

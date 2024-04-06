@@ -15,3 +15,7 @@ impl<R: Runtime, T: Manager<R>> BlenderExt<R> for T {
     self.state::<Blender<R>>().inner()
   }
 }
+
+trait Worker {
+
+}

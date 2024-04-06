@@ -9,7 +9,7 @@
   "packageManager": "yarn@4.1.1",
   "devDependencies": {
     "@blending/config": "workspace:^",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.4"
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.14.2",

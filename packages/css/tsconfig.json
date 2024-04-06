@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "@blending/config/tsconfigs/base",
+  ]
+}

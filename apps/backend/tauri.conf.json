@@ -25,11 +25,6 @@
       "csp": null
     }
   },
-  "plugins": {
-    "cli": {
-
-    }
-  },
   "bundle": {
     "copyright": "Copyright (c) deminearchiver 2024",
     "active": true,

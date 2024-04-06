@@ -1,6 +1,6 @@
-import { colorMix, css } from "@blending/common/css";
+import css from "@blending/css";
 import { darkTheme } from "@blending/material/theme/global/dark";
-import { fontFace, globalStyle } from "@vanilla-extract/css";
+import { globalStyle } from "@vanilla-extract/css";
 
 /*
 // <uniquifier>: Use a unique and descriptive class name
@@ -107,7 +107,7 @@ globalStyle(
 globalStyle(
   "body::-webkit-scrollbar-thumb",
   {
-    backgroundColor: colorMix(
+    backgroundColor: css.colorMix(
       "srgb",
       [darkTheme.color.onSurface, "12%"],
       "transparent",
@@ -121,7 +121,7 @@ globalStyle(
 globalStyle(
   "body::-webkit-scrollbar-thumb:hover",
   {
-    backgroundColor: colorMix(
+    backgroundColor: css.colorMix(
       "srgb",
       [darkTheme.color.onSurface, "38%"],
       "transparent",

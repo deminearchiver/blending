@@ -3,6 +3,7 @@ resolver = "2"
 members = [
   "apps/backend",
   "packages/tauri-plugin-ftp",
+  "packages/tauri-plugin-dwm",
 ]
 
 [workspace.package]
@@ -12,3 +13,4 @@ license = "ISC"
 
 [workspace.dependencies]
 tauri-plugin-ftp = { path = "packages/tauri-plugin-ftp" }
+tauri-plugin-dwm = { path = "packages/tauri-plugin-dwm" }

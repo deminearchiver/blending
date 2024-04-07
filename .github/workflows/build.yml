@@ -21,7 +21,7 @@ jobs:
           node-version: latest
           cache: yarn
       - uses: dtolnay/rust-toolchain@stable
-      - uses: swatinem/rust-cache@v2
+      # - uses: swatinem/rust-cache@v2
       - name: Install project dependencies
         run: yarn install --immutable
       - name: Build

@@ -74,6 +74,7 @@ globalStyle(
     padding: 0,
     margin: 0,
     boxSizing: "border-box",
+    outline: "none",
   },
 );
 globalStyle(

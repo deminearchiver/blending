@@ -29,7 +29,7 @@ export function radialGradient(
   if(options?.position != null) parts.push(options.position);
 
   return RADIAL_GRADIENT(
-    ...parts.length > 0 ? parts.join(" ") : [],
+    ...parts.length > 0 ? [parts.join(" ")] : [],
     ...stops.map(
       stop => typeof stop === "string" ? stop : stop.join(" "),
     ),

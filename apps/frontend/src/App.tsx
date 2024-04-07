@@ -21,6 +21,8 @@ import { NavigationRail } from "@blending/material/components/navigation-rail";
 import { FloatingActionButton } from "@blending/material/components/floating-action-button";
 import { getCurrent } from "@tauri-apps/api/window";
 import { Card } from "@blending/material/components/card";
+import { ListItem } from "@blending/material/components/list";
+import { Switch } from "@blending/material/components/switch";
 
 export const App: Component = (props) => {
   // createEventListener(
@@ -45,7 +47,7 @@ export const App: Component = (props) => {
     const color = getComputedStyle(document.body)
       .getPropertyValue(getVarName(darkTheme.color.surfaceContainer));
     invoke("set_title_bar_color", { color: color });
-    
+
 
 
   });
@@ -68,12 +70,32 @@ export const App: Component = (props) => {
         </NavigationRail>
         <header>
           <SearchBar />
+          <Switch />
         </header>
         <main>
           <Button.Elevated onClick={() => {}}>Test</Button.Elevated>
           <Button.Filled onClick={() => {}}>Test</Button.Filled>
           <Button.Tonal onClick={() => {}}>Test</Button.Tonal>
           <Button.Outlined onClick={() => {}}>Test</Button.Outlined>
+          <ul style={{ display: "flex", "flex-direction": "column" }}>
+            <ListItem
+              leading={<Icon name="change_history" />}
+              title="Title"
+              subtitle="Subtitle"
+              trailing={<Icon name="change_history" />} />
+            <ListItem
+              leading={<Icon name="change_history" />}
+              title="Title"
+              subtitle={<><p>Sub</p><p>title</p></>}
+              trailing={<Icon name="change_history" />} />
+            <ListItem
+              leading={<Icon name="change_history" />}
+              title="Title"
+              subtitle="Subtitle"
+              trailing={<Icon name="change_history" />} />
+          </ul>
+          <Switch />
+
         </main>
       </div>
     </div>

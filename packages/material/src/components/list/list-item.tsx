@@ -1,5 +1,5 @@
-import { JSX, ParentComponent } from "solid-js";
-import { listItemContentStyle, listItemStyle } from "./list-item.css";
+import { Component, JSX, ParentComponent, children, createMemo } from "solid-js";
+import { listItemContentStyle, listItemStyle, listItemSubtitleStyle, listItemTitleStyle } from "./list-item.css";
 import { Splash } from "../splash";
 import { Focus } from "../focus";
 
@@ -10,20 +10,22 @@ export interface ListItemProps {
   trailing?: JSX.Element;
 }
 
-export const ListItem: ParentComponent<ListItemProps> = (props) => {
+export const ListItem: Component<ListItemProps> = (props) => {
   let ref!: HTMLElement;
+
   return (
     <li
       ref={ref as HTMLLIElement}
-      class={listItemStyle}>
+      class={listItemStyle}
+      tabIndex={0}>
 
       <Focus for={ref} />
       <Splash for={ref} />
 
       {props.leading}
-      <div style={listItemContentStyle}>
-        {props.title}
-        {props.subtitle}
+      <div class={listItemContentStyle}>
+        <div class={listItemTitleStyle}>{props.title}</div>
+        <div class={listItemSubtitleStyle}>{props.subtitle}</div>
       </div>
       {props.trailing}
     </li>

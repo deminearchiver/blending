@@ -10,6 +10,6 @@ import "@blending/material/theme/global/dark";
 import "material-symbols/rounded.css";
 import { Test } from "./components/onboarding";
 render(
-  () => <Test />,
+  () => <App />,
   document.getElementById("root")!,
 );

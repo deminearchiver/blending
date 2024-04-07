@@ -25,11 +25,12 @@ export const focusStyle = style({
   position: "absolute",
   display: "none",
   pointerEvents: "none",
-  boxSizing: "border-box", 
+  boxSizing: "border-box",
   borderRadius: "inherit",
   inset: -2,
   color: darkTheme.color.secondary,
   outline: `3px solid currentColor`,
+  zIndex: 1,
 });
 
 export const focusVisibleStyle = style({

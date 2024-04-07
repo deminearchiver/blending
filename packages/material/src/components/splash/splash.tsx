@@ -1,8 +1,9 @@
-import { Accessor, Component, ParentComponent, Ref, createComponent, createEffect, createSignal, on, onMount } from "solid-js";
+import { Accessor, Component, JSX, ParentComponent, Ref, createComponent, createEffect, createSignal, on, onMount, splitProps } from "solid-js";
 import { splashStyle, surfaceHoveredStyle, surfacePressedStyle, surfaceStyle } from "./splash.css";
 import { createEventListenerMap, makeEventListenerStack } from "@solid-primitives/event-listener";
 import { MaybeAccessor } from "@solid-primitives/utils";
 import { wait } from "@blending/common/utils";
+import { mergeRefs } from "@solid-primitives/refs";
 
 const PRESS_GROW_MS = 450;
 const MINIMUM_PRESS_MS = 225;
@@ -24,9 +25,14 @@ enum State {
 export type SplashProps = {
   for: MaybeAccessor<HTMLElement>;
   disabled?: boolean;
-}
+} & JSX.HTMLAttributes<HTMLElement>;
 
 export const Splash: Component<SplashProps> = (props) => {
+  const [split, attributes] = splitProps(
+    props,
+    ["disabled", "for"],
+  );
+
   let ref!: HTMLElement;
   let surfaceRef!: HTMLElement;
 
@@ -49,8 +55,8 @@ export const Splash: Component<SplashProps> = (props) => {
     { pointerType }: PointerEvent
   ) => pointerType === "touch";
 
-  const shouldReactToEvent = (event: PointerEvent) => { 
-    if (props.disabled || !event.isPrimary) return false;
+  const shouldReactToEvent = (event: PointerEvent) => {
+    if (split.disabled || !event.isPrimary) return false;
 
     const startEvent = rippleStartEvent();
     if (
@@ -67,7 +73,7 @@ export const Splash: Component<SplashProps> = (props) => {
     const isPrimaryButton = event.buttons === 1;
     return isTouch(event) || isPrimaryButton;
   }
-  
+
   const getNormalizedPointerEventCoords = (event: PointerEvent): {
     x: number;
     y: number;
@@ -124,14 +130,12 @@ export const Splash: Component<SplashProps> = (props) => {
     setRippleSize(`${initialSize}px`);
   }
   const handleContextmenu = () => {
-    if (props.disabled) {
-      return;
-    }
+    if (split.disabled) return;
 
     setCheckBoundsAfterContextMenu(true);
     endPressAnimation();
   }
-  
+
   const startPressAnimation = (event?: Event) => {
     setPressed(true);
     growAnimation()?.cancel();
@@ -200,7 +204,7 @@ export const Splash: Component<SplashProps> = (props) => {
 
 
   const onClick = () => {
-    if(props.disabled) return;
+    if(split.disabled) return;
 
     if (state() === State.WAITING_FOR_CLICK) {
       endPressAnimation();
@@ -270,7 +274,7 @@ export const Splash: Component<SplashProps> = (props) => {
   }
 
   createEventListenerMap(
-    props.for,
+    split.for,
     {
       click: onClick,
       pointerdown: onPointerDown,
@@ -283,8 +287,9 @@ export const Splash: Component<SplashProps> = (props) => {
 
   return (
     <div
-      ref={ref as HTMLDivElement}
-      class={splashStyle}>
+      {...attributes}
+      ref={mergeRefs(props.ref, element => ref = element)}
+      class={[splashStyle, attributes.class].join(" ")}>
       <div
         ref={surfaceRef as HTMLDivElement}
         class={surfaceStyle}
